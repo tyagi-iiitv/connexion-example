@@ -42,7 +42,7 @@ def delete_pet(pet_id):
 
 logging.basicConfig(level=logging.INFO)
 app = connexion.App(__name__)
-app.add_api('swagger.yaml')
+app.add_api('swagger.yaml', strict_validation=True)
 # set the WSGI application callable to allow using uWSGI:
 # uwsgi --http :8080 -w app
 application = app.app
